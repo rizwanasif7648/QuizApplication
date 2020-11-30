@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import static java.util.Arrays.asList;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,10 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
     void setValues()
     {
-        question.setText(questArrayList.get(cursor));
-        opt1.setText(optArrayList.get(cursor * 3));
-        opt2.setText(optArrayList.get((cursor * 3) + 1));
-        opt3.setText(optArrayList.get((cursor * 3) + 2));
+        question.setText("Q No " +Integer.toString(cursor + 1)+ ": "+ questArrayList.get(cursor));
+        radioGroup.clearCheck();
+        ArrayList<String> tempList = new ArrayList<String>(3);
+        tempList.add(optArrayList.get(cursor * 3));
+        tempList.add(optArrayList.get((cursor * 3) + 1));
+        tempList.add(optArrayList.get((cursor * 3) + 2));
+        Collections.shuffle(tempList);
+        opt1.setText(tempList.get(0));
+        opt2.setText(tempList.get(1));
+        opt3.setText(tempList.get(2));
     }
 
     void saveAnswer()
@@ -117,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] questions = getResources().getStringArray(R.array.questions);
         questArrayList = new ArrayList<String>(asList(questions));
+        Collections.shuffle(questArrayList);
         String[] options = getResources().getStringArray(R.array.options);
         optArrayList = new ArrayList<String>(asList(options));
         String[] answers = getResources().getStringArray(R.array.answers);
