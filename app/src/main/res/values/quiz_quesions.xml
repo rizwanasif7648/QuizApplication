@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<string-array name="questions">
+			<item>Q1 - Prefix notation is alsow known as</item>
+			<item>Q2 - Which of the following asymptotic notation is the worst among all?</item>
+			<item>Q3 - Visiting root node after visiting left and right sub-trees is called</item>
+			<item>Q4 - Which of the following has search effeciency of Ο(1) −</item>
+			<item>Q5 - The number of binary trees with 3 nodes which when traversed in post order gives the sequence A,B,C is ?</item>
+			<item>Q6 - Index of arrays in C programming langauge starts from</item>
+			<item>Q7 - Which of the following algorithm cannot be desiged without recursion −</item>
+			<item>Q8 - From a complete graph, by removing maximum _______________ edges, we can construct a spanning tree.</item>
+			<item>Q9 - What is the worst case run-time complexity of binary search algorithm?</item>
+			<item>Q10 - The depth of complete binary tree is given by</item>
+		</string-array>
+		
+		<string-array name="options">
+			<item>Reverse Polish Notation</item>
+			<item>Reverse Notation</item>
+			<item>Polish Notation</item>
+			<item>Ο(n+9378)</item>
+			<item>Ο(n3)</item>
+			<item>nΟ(1)</item>
+			<item>In-order Traversal</item>
+			<item>Pre-order Traversal</item>
+			<item>Post-order Traversal</item>
+			<item>Hash Table</item>
+			<item>Heap</item>
+			<item>Tree</item>
+			<item>3</item>
+			<item>5</item>
+			<item>6</item>
+			<item>0</item>
+			<item>1</item>
+			<item>either 0 or 1</item>
+			<item>Tower of Hanoi</item>
+			<item>Tree Traversal</item>
+			<item>None of the above</item>
+			<item>e-n+1</item>
+			<item>- n-e+1</item>
+			<item>- n+e-1</item>
+			<item>Ο(n2)</item>
+			<item>Ο(nlog n)</item>
+			<item>Ο(n)</item>
+			<item>Dn = log2n</item>
+			<item>Dn = log2n + 1</item>
+			<item>Dn = n log2n +1</item>
+		</string-array>
+		
+		<string-array name="answers">
+			<item>Polish Notation</item>
+			<item>Ο(n3)</item>
+			<item>Post-order Traversal</item>
+			<item>Hash Table</item>
+			<item>5</item>
+			<item>0</item>
+			<item>None of the above</item>
+			<item>e-n+1</item>
+			<item>Ο(n)</item>
+			<item>Dn = log2n + 1</item>
+		</string-array>
+	</resources>
