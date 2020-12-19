@@ -10,10 +10,10 @@
         android:id="@+id/question"
         android:layout_width="345dp"
         android:layout_height="63dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/time" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -49,8 +49,8 @@
         android:id="@+id/pre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="48dp"
         android:background="#CDDC39"
         android:onClick="previousCall"
         android:text="Previous"
@@ -61,8 +61,8 @@
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="64dp"
         android:background="#CEDD38"
         android:onClick="nextCall"
         android:text="Next"
@@ -73,17 +73,16 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#CDDC39"
-        android:backgroundTint="#CDDC39"
+        android:layout_marginTop="136dp"
+        android:background="#B00020"
+        android:backgroundTint="@color/design_default_color_error"
         android:onClick="submission"
         android:shadowColor="#CDDC39"
         android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.689"
         app:strokeColor="#CDDC39" />
 
     <TextView
@@ -99,4 +98,15 @@
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

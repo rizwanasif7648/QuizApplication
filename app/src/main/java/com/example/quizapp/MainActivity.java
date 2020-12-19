@@ -3,22 +3,32 @@ package com.example.quizapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.os.Handler;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import android.app.Activity;
 
 import static java.util.Arrays.asList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public int counter;
+    Button btn;
+    TextView time;
     ArrayList<String> questArrayList;
     ArrayList<String> optArrayList;
     ArrayList<String> selectedAns;
@@ -29,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
     RadioButton opt1;
     RadioButton opt2;
     RadioButton opt3;
+    Timer timer;
+    TimerTask timerTask;
     int cursor = 0;
+    int quizTime = 60;
 
     void setValues()
     {
@@ -111,17 +124,20 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Count", count);
         startActivity(intent);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent2 = new Intent(this, MainActivity2.class);
         radioGroup = findViewById(R.id.radioGroup);
         question = findViewById(R.id.question);
         opt1 = findViewById(R.id.opt1);
         opt2 = findViewById(R.id.opt2);
         opt3 = findViewById(R.id.opt3);
         selectedAns = new ArrayList<String>(10);
+
 
         String[] questions = getResources().getStringArray(R.array.questions);
         questArrayList = new ArrayList<String>(asList(questions));
@@ -136,6 +152,20 @@ public class MainActivity extends AppCompatActivity {
             selectedAns.add("");
         }
         setValues();
+
+        time= (TextView) findViewById(R.id.time);
+        new CountDownTimer(quizTime * 1000, 1000){
+            public void onTick(long millisUntilFinished){
+                time.setText(String.valueOf(quizTime - counter) + "s Left");
+                counter++;
+            }
+            public  void onFinish(){
+                saveAnswer();
+                int count = result();
+                intent2.putExtra("Count", count);
+                startActivity(intent2);
+            }
+        }.start();
     }
 }
 
