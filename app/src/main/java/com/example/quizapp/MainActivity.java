@@ -153,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
         }
         setValues();
 
+
+	//Add Time constraint
         time= (TextView) findViewById(R.id.time);
         new CountDownTimer(quizTime * 1000, 1000){
             public void onTick(long millisUntilFinished){
